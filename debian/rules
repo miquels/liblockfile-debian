@@ -3,15 +3,11 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
-
 %:
 	dh $@
 
 override_dh_auto_configure:
-	./configure --enable-shared --prefix=/usr \
-		--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH) \
-		--with-mailgroup --mandir=/usr/share/man
+	dh_auto_configure -- --enable-shared --with-mailgroup
 
 override_dh_fixperms:
 	dh_fixperms
@@ -19,7 +15,3 @@ override_dh_fixperms:
 		chgrp mail debian/liblockfile-bin/usr/bin/dotlockfile; \
 		chmod 2755 debian/liblockfile-bin/usr/bin/dotlockfile; \
 	fi
-
-override_dh_auto_install:
-	dh_auto_install -- libdir=/usr/lib/$(DEB_HOST_MULTIARCH)/
-

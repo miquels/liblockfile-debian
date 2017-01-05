@@ -1,3 +1,13 @@
+liblockfile (1.11-1) unstable; urgency=low
+
+  * new upstream version
+  * use geteuid() instead of getuid() to find out mailboxname
+    (closes: #736666)
+  * add dotlockfile <lockfile> cmd args... functionality
+    (closes: #41791)
+
+ -- Miquel van Smoorenburg <miquels@debian.org>  Tue, 03 Jan 2017 20:46:41 +0100
+
 liblockfile (1.10-1) unstable; urgency=low
 
   * new upstream version

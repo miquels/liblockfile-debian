@@ -1,3 +1,2 @@
 compression = "bzip2"
 compression-level = 9
-diff-ignore = "LICENSE|README.md"
