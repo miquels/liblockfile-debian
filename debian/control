@@ -5,8 +5,8 @@ Maintainer: Miquel van Smoorenburg <miquels@cistron.nl>
 Uploaders: Anibal Monsalve Salazar <anibal@debian.org>
 Standards-Version: 3.9.4
 Build-depends: debhelper (>=9)
-Vcs-Git: https://github.com/mikevs/liblockfile.git
-Vcs-Browser: https://github.com/mikevs/liblockfile
+Vcs-Git: https://github.com/miquels/liblockfile.git
+Vcs-Browser: https://github.com/miquels/liblockfile
 
 Package: liblockfile1
 Section: libs

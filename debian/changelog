@@ -1,3 +1,10 @@
+liblockfile (1.12-1) unstable; urgency=low
+
+  * new upstream version (closes: #638800)
+  * update upstream url in debian/control
+
+ -- Miquel van Smoorenburg <miquels@cistron.nl>  Thu, 05 Jan 2017 12:46:01 +0100
+
 liblockfile (1.11-1) unstable; urgency=low
 
   * new upstream version
