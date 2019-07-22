@@ -1,3 +1,21 @@
+liblockfile (1.14-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/control:
+    + Drop obsolete Pre-Depends on multiarch-support.  (Closes: #867224)
+    + Drop duplicate Priority definitions.
+    + Mark liblockfile-dev as Multi-Arch:same.
+    + Add dependency on ${misc:Depends} to liblockfile-dev.
+    + Add Homepage field.
+    + Fix Vcs-* fields to point to the packaging repository.  (Closes: #867225)
+  * debian/copyright: fix copyright-format 1.0 syntax by adding missing
+    Copyright fields and appropriate stand-alone License paragraphs.
+  * dotlockfile.1: Fix groff syntax.
+  * Remove maintainer scripts calling ldconfig, debhelper does that
+    automatically through dpkg triggers nowadays.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Sun, 03 Dec 2017 15:17:53 +0100
+
 liblockfile (1.14-1) unstable; urgency=high
 
   * new upstream version
