@@ -1,3 +1,10 @@
+liblockfile (1.15-1) unstable; urgency=low
+
+  * new upstream version
+  * add "buildpackage" build script helper.
+
+ -- Miquel van Smoorenburg <miquels@debian.org>  Tue, 23 Jul 2019 23:28:31 +0200
+
 liblockfile (1.14-1.1) unstable; urgency=medium
 
   * Non-maintainer upload.
