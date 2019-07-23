@@ -1,13 +1,8 @@
 ## debian packaging for liblockfile
 
-To build a debian package:
+To build a debian package, run `./buildpackage` instead of `dpkg-buildpackage`.
+This will extract the upstream tarball into a temporary build directory, copy
+the debian/ directory into it, chdir into it, and run dpkg-buildpackage there.
 
-- make sure the .orig tarball is present in the parent directory.
-- git clean -xf
-- tar --xform s:[^/]\*:.: -xf ../liblockfile\_1.XY.orig.tar.gz
-- dpkg-buildpackage -rfakeroot
-
-After building, the directory can be cleaned with
-
-- git clean -xf
+To clean can run `./buildpackage clean` or, alternatively `git clean -xf`.
 

@@ -1,0 +1,35 @@
+#! /bin/sh -e
+
+rm -rf build-area
+rm -f *deb *.tar.bz2 *.dsc *.buildinfo *.changes *.upload *.orig.tar.gz
+
+if [ "$1" = clean ] || [ "$1" = "-Tclean" ] || [ "$1" = "-T" -a "$2" = "clean" ]
+then
+	exit 0
+fi
+
+UPVERSION=$(sed -ne '1s/^liblockfile (\(.*\)-[^-]\+) .*$/\1/p' < debian/changelog)
+UPSTREAM=liblockfile-$UPVERSION.tar.gz
+ORIGTAR=liblockfile_$UPVERSION.orig.tar.gz
+
+if [ ! -f "../$UPSTREAM" ]
+then
+	echo "$UPSTREAM tarball not found in parent, fatal" >&1
+	exit 1
+fi
+
+echo "Copying upstream tarball"
+cp "../$UPSTREAM" "$ORIGTAR"
+
+echo "Extracting sources"
+tar --one-top-level=build-area --strip-components=1 -xf $ORIGTAR
+find build-area -name .pc -print0 | xargs -0 rm -rf
+
+echo "Copying debian directory"
+rm -rf build-area/debian
+cp -a debian build-area/debian
+
+echo "Calling dpkg-buildpackage $*"
+cd build-area
+exec dpkg-buildpackage "$@"
+
