@@ -1,3 +1,10 @@
+liblockfile (1.16-1) unstable; urgency=low
+
+  * new upstream version (closes: #933104)
+  * never run tests during build (disable dh_auto_test)
+
+ -- Miquel van Smoorenburg <miquels@debian.org>  Thu, 26 Sep 2019 14:32:11 +0200
+
 liblockfile (1.15-1) unstable; urgency=low
 
   * new upstream version

@@ -9,6 +9,9 @@
 override_dh_auto_configure:
 	dh_auto_configure -- --enable-shared --with-mailgroup
 
+override_dh_auto_test:
+	true
+
 override_dh_fixperms:
 	dh_fixperms
 	@if [ -f debian/liblockfile-bin/usr/bin/dotlockfile ]; then \
